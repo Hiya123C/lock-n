@@ -1,0 +1,151 @@
+/* Store.css */
+
+.store-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 14px 16px 12px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+/* ── Balance ── */
+.store-balance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 8px 14px;
+  flex-shrink: 0;
+}
+.store-coin-icon  { font-size: 18px; opacity: 0.7; }
+.store-coin-count { font-size: 1.1rem; font-weight: 700; }
+.store-coin-label { font-size: 0.75rem; opacity: 0.45; letter-spacing: 0.1em; text-transform: uppercase; margin-left: 2px; }
+
+/* ── Tabs ── */
+.store-tabs {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.store-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.store-tab {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  opacity: 0.5;
+  transition: opacity 0.15s, background 0.15s;
+}
+.store-tab:hover        { opacity: 0.8; }
+.store-tab-active       { background: var(--dark); color: white; border-color: transparent; opacity: 1; }
+
+/* ── Grid ── */
+.store-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 2px;
+}
+
+.store-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Card ── */
+.store-card {
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.store-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.store-owned  { border-color: var(--dark); opacity: 0.7; }
+.store-locked { opacity: 0.5; }
+
+.store-item-icon { font-size: 28px; }
+.store-item-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.store-item-desc {
+  font-size: 0.7rem;
+  opacity: 0.45;
+  line-height: 1.3;
+}
+
+/* ── Buy button ── */
+.store-buy-btn {
+  all: unset;
+  cursor: pointer;
+  margin-top: 6px;
+  background: var(--dark);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: transform 0.15s, opacity 0.15s, background 0.2s;
+}
+.store-buy-btn:hover:not(:disabled) { transform: scale(1.05); opacity: 0.88; }
+.store-buy-btn:disabled { cursor: default; }
+.store-buy-owned {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--text);
+  opacity: 0.4;
+}
+.store-buy-flash { background: #4caf8a !important; }
+
+/* ── Extra styles for new Store features ── */
+.store-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  opacity: 0.4;
+  font-size: 0.82rem;
+  padding: 24px 0;
+}
+.store-btn-place {
+  background: var(--dark) !important;
+  color: white !important;
+}
+.store-btn-remove {
+  background: transparent !important;
+  border: 1.5px solid #ff5f57 !important;
+  color: #ff5f57 !important;
+}
+.store-owned-badge {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+}
+
+/* Custom image icons in store cards */
+.store-item-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}

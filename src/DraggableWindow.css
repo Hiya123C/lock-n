@@ -1,0 +1,110 @@
+/* DraggableWindow.css */
+
+.dw-window {
+  position: fixed;
+  z-index: 500;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  background: var(--window-bg, rgba(255,255,255,0.72));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: box-shadow 0.2s;
+  min-width: 220px;
+}
+
+.dw-window.dw-minimised {
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.dw-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: grab;
+  background: rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  user-select: none;
+}
+.dw-titlebar:active { cursor: grabbing; }
+
+.dw-controls {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+/* macOS */
+.dw-dot {
+  all: unset;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.dw-dot:hover { opacity: 0.75; transform: scale(1.15); }
+.dw-close    { background: #ff5f57; }
+.dw-minimise { background: #febc2e; }
+
+.dw-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: "Unica One", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dw-title-icon {
+  font-size: 14px;
+}
+
+.dw-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: "Unica One", sans-serif;
+}
+
+.dw-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nwse-resize;
+  /* subtle visual grip lines */
+  background:
+    linear-gradient(135deg,
+      transparent 40%,
+      rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.1) 50%,
+      transparent 50%, transparent 65%,
+      rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.1) 75%,
+      transparent 75%
+    );
+}
+
+.dw-window.dw-minimised {
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  min-width: unset;
+  width: auto !important;
+}
+
+.dw-window.dw-minimised .dw-minimise {
+  background: #28c840;
+}
+
+.dw-pill-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  white-space: nowrap;
+}

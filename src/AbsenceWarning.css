@@ -1,0 +1,60 @@
+/* AbsenceWarning.css */
+
+.aw-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 800;
+  animation: aw-in 0.3s ease;
+}
+@keyframes aw-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.aw-warning-overlay { background: rgba(255, 180, 0, 0.25); backdrop-filter: blur(8px); }
+.aw-penalty-overlay  { background: rgba(200,  40, 40, 0.25); backdrop-filter: blur(8px); }
+
+.aw-box {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 22px;
+  padding: 36px 40px;
+  width: min(400px, 90vw);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+}
+
+.aw-emoji { font-size: 52px; }
+.aw-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.aw-msg {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+.aw-btn {
+  all: unset;
+  cursor: pointer;
+  margin-top: 8px;
+  background: var(--dark);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.aw-btn:hover { transform: scale(1.04); opacity: 0.88; }

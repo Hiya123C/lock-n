@@ -1,0 +1,204 @@
+/* SessionGoalModal.css */
+
+.sgm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 600;
+  animation: sgm-fadein 0.25s ease;
+
+  font-family: "Unica One", sans-serif;
+}
+@keyframes sgm-fadein {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.sgm-box {
+  background: var(--window-bg, rgba(255,255,255,0.85));
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  padding: 32px 36px;
+  width: min(420px, 90vw);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sgm-title {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--text);
+  font-family: "Audiowide", sans-serif;
+}
+.sgm-sub {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* ── Goals list ── */
+.sgm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sgm-empty {
+  font-size: 0.82rem;
+  opacity: 0.35;
+  font-style: italic;
+  text-align: center;
+  padding: 12px 0;
+}
+.sgm-goal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 10px;
+}
+.sgm-bullet { font-size: 10px; opacity: 0.4; flex-shrink: 0; }
+.sgm-gtext  { flex: 1; font-size: 0.88rem; }
+.sgm-remove {
+  all: unset;
+  cursor: pointer;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+.sgm-remove:hover { opacity: 0.7; }
+.sgm-remove .material-symbols-outlined { font-size: 15px; }
+
+/* ── Input ── */
+.sgm-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.sgm-input {
+  flex: 1;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  outline: none;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 0.88rem;
+  background: rgba(255,255,255,0.6);
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.sgm-input:focus { border-color: var(--dark); }
+.sgm-add {
+  all: unset;
+  cursor: pointer;
+  background: var(--dark);
+  color: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.sgm-add:hover { transform: scale(1.08); opacity: 0.85; }
+.sgm-add .material-symbols-outlined { font-size: 18px; }
+
+/* ── Coin info strip ── */
+.sgm-coin-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+}
+
+/* ── Buttons ── */
+.sgm-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+.sgm-cancel {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.85rem;
+  opacity: 0.45;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+}
+.sgm-cancel:hover { opacity: 0.7; }
+.sgm-confirm {
+  all: unset;
+  cursor: pointer;
+  background: var(--dark);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.sgm-confirm:hover { transform: scale(1.03); opacity: 0.88; }
+
+/* Existing goals (from checklist) — read only */
+.sgm-goal-existing {
+  opacity: 0.55;
+}
+.sgm-existing-tag {
+  font-size: 0.68rem;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+/* Urgent suggestions from Priority Matrix */
+.sgm-suggestions {
+  background: rgba(255, 95, 87, 0.07);
+  border: 1px solid rgba(255, 95, 87, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sgm-suggest-label {
+  font-size: 0.72rem;
+  opacity: 0.6;
+  margin: 0 0 2px;
+  letter-spacing: 0.04em;
+}
+.sgm-suggest-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255, 95, 87, 0.1);
+  color: var(--text);
+  transition: background 0.15s;
+  text-align: left;
+}
+.sgm-suggest-btn:hover { background: rgba(255, 95, 87, 0.2); }

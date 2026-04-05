@@ -1,0 +1,135 @@
+/* ChecklistWindow.css */
+
+.cl-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 14px 16px 12px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* ── Progress bar ── */
+.cl-progress {
+  height: 3px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cl-progress-fill {
+  height: 100%;
+  background: var(--dark);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.cl-summary {
+  margin: 0;
+  font-size: 0.72rem;
+  opacity: 0.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Task list ── */
+.cl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cl-empty {
+  font-size: 0.85rem;
+  opacity: 0.35;
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+}
+.cl-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+.cl-item:hover { background: rgba(0,0,0,0.04); }
+
+.cl-check {
+  all: unset;
+  cursor: pointer;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.cl-check:hover { opacity: 1; transform: scale(1.1); }
+.cl-check .material-symbols-outlined { font-size: 20px; }
+
+.cl-text {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: opacity 0.2s;
+}
+.cl-done .cl-text {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+.cl-done .cl-check { color: var(--dark); opacity: 0.5; }
+
+.cl-delete {
+  all: unset;
+  cursor: pointer;
+  opacity: 0;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+.cl-delete .material-symbols-outlined { font-size: 16px; }
+.cl-item:hover .cl-delete { opacity: 0.3; }
+.cl-delete:hover { opacity: 0.7 !important; }
+
+/* ── Add row ── */
+.cl-add-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 10px;
+}
+.cl-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.cl-input::placeholder { opacity: 0.4; }
+.cl-add-btn {
+  all: unset;
+  cursor: pointer;
+  background: var(--dark);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.cl-add-btn:hover { transform: scale(1.08); opacity: 0.85; }
+.cl-add-btn .material-symbols-outlined { font-size: 18px; }

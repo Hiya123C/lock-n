@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+button {
+  all: unset;
+}
+
+.coin-box {
+  background: var(--light);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.start-btn {
+  background: var(--dark);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  overflow: visible;
+}
+
+.icon {
+  cursor: pointer;
+  position: relative;
+  font-size: 28px;
+  overflow: visible !important;
+}
+
+.right-icons {
+  display: flex;
+  gap: 15px;
+
+  overflow: visible;
+}
+
+.drop-icons {
+  padding: 12px;
+  margin: -12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
+}
+
+.theme-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: var(--light);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  overflow: visible;
+  z-index: 9999;
+}
+
+.theme-menu div {
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.theme-menu div:hover {
+  background: var(--mid);
+  color: white;
+}

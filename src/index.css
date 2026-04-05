@@ -1,0 +1,43 @@
+:root {
+  --bg-color: #D9EAFD;
+  --light: #F8FAFC;
+  --mid: #BCCCDC;
+  --dark: #9AA6B2;
+  --text: #011E3B;
+}
+
+body[data-theme="cherry-theme"] {
+  --bg-color: #F9DFDF;
+  --light: #FCF8F8;
+  --mid: #F5AFAF;
+  --dark: #FF5252;
+  --text: #3A0303;
+}
+
+body[data-theme="wood-theme"] {
+  --bg-color: #C08552;
+  --light: #FFF8F0;
+  --mid: #8C5A3C;
+  --dark: #4B2E2B;
+  --text: #222222;
+}
+
+body[data-theme="leaf-theme"] {
+  --bg-color: #C5D89D;
+  --light: #F6F0D7;
+  --mid: #9CAB84;
+  --dark: #89986D;
+  --text: #383F2D;
+}
+
+.bold-font {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.regular-font {
+  font-family: "Unica One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
