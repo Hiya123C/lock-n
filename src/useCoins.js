@@ -32,7 +32,7 @@ export function calcCoinsEarned(sessionHours, totalTasks, completedTasks) {
 export function useCoins() {
   const [coins, setCoins] = useState(() => {
     const saved = localStorage.getItem(COIN_KEY)
-    return saved ? parseInt(saved, 10) : 1000000
+    return saved ? parseInt(saved, 10) : 0 //bugtesting: 100000
   })
 
   const addCoins = (amount) => {
