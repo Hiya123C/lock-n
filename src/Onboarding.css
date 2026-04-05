@@ -1,0 +1,149 @@
+/* Onboarding.css */
+.ob-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ob-fade-in 0.4s ease;
+}
+@keyframes ob-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.ob-exit {
+  animation: ob-fade-out 0.4s ease forwards;
+}
+@keyframes ob-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.ob-card {
+  background: var(--light, #f8fafc);
+  border-radius: 24px;
+  padding: 36px 32px 28px;
+  width: min(420px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  animation: ob-slide-up 0.4s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+@keyframes ob-slide-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Dots */
+.ob-dots {
+  display: flex;
+  gap: 6px;
+}
+.ob-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--mid, #bcccdc);
+  transition: all 0.2s;
+}
+.ob-dot-active {
+  width: 20px;
+  border-radius: 3px;
+  background: var(--dark, #9aa6b2);
+}
+.ob-dot-done { background: var(--dark, #9aa6b2); opacity: 0.4; }
+
+/* Icon */
+.ob-icon-wrap {
+  width: 64px; height: 64px;
+  border-radius: 18px;
+  background: var(--bg-color, #d9eafd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+.ob-icon-highlight {
+  background: #fff0f0;
+  animation: ob-pulse 1.5s ease-in-out infinite;
+}
+@keyframes ob-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,95,87,0.3); }
+  50%       { box-shadow: 0 0 0 10px rgba(255,95,87,0); }
+}
+.ob-icon {
+  font-size: 30px;
+  color: var(--text, #011e3b);
+}
+
+/* Text */
+.ob-title {
+  font-family: "Audiowide", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text, #011e3b);
+  margin: 0;
+  text-align: center;
+}
+.ob-desc {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text, #011e3b);
+  opacity: 0.75;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 320px;
+}
+.ob-tip {
+  background: var(--bg-color, #d9eafd);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--text, #011e3b);
+  opacity: 0.8;
+  text-align: center;
+  width: 100%;
+}
+
+/* Buttons */
+.ob-btns {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 6px;
+}
+.ob-btn {
+  all: unset;
+  cursor: pointer;
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Unica One", sans-serif;
+  font-size: 0.9rem;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.ob-btn:hover { opacity: 0.85; transform: scale(1.02); }
+.ob-btn-primary {
+  background: var(--dark, #9aa6b2);
+  color: var(--light, #f8fafc);
+}
+.ob-btn-ghost {
+  background: var(--mid, #bcccdc);
+  color: var(--text, #011e3b);
+  opacity: 0.7;
+}
+.ob-skip {
+  all: unset;
+  cursor: pointer;
+  font-family: "Unica One", sans-serif;
+  font-size: 0.75rem;
+  opacity: 0.35;
+  transition: opacity 0.15s;
+}
+.ob-skip:hover { opacity: 0.7; }

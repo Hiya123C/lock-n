@@ -14,12 +14,15 @@ import CameraWindow        from "./CameraWindow"
 import Timer               from "./Timer"
 import PriorityMatrix      from "./PriorityMatrix"
 import { usePriorityTasks } from "./usePriorityTasks"
+import Onboarding, { useOnboarding } from "./Onboarding"
 import "./PriorityMatrix.css" 
 import "./LockIn.css"
 import "./Timer.css"
 
 function LockInView({ musicState }) {
-  const { theme, changeTheme } = useTheme()
+  const { show: showOnboarding, complete: completeOnboarding } = useOnboarding()
+  
+  const { theme, changeTheme, snowKey } = useTheme()
   const { coins, addCoins, spendCoins, canAfford } = useCoins()
 
   const priorityStateRef = useRef(null)
@@ -68,7 +71,9 @@ function LockInView({ musicState }) {
     <div className="focus-page">
       {theme === "winter" && (
         <Snowfall
-          color="#ffffff" snowflakeCount={120}
+          key={snowKey}
+          color="#ffffff"
+          snowflakeCount={120}
           style={{ position: "fixed", width: "100vw", height: "100vh", zIndex: 0 }}
         />
       )}
@@ -172,6 +177,7 @@ function LockInView({ musicState }) {
       )}
 
       <DecoLayer storeState={storeState} />
+      {showOnboarding && <Onboarding onDone={completeOnboarding} />}
     </div>
   )
 }

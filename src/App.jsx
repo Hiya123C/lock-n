@@ -2,12 +2,14 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Snowfall from "react-snowfall"
 import { useTheme } from "./useTheme"
-import { ThemeMenu, MusicButton } from "./TopBarItems"
+// import { ThemeMenu, MusicButton } from "./TopBarItems" unused
+
 import "./App.css"
 
 function App({ isPlaying, toggleMusic }) {
   const [hoverLock, setHoverLock] = useState(false)
   const { theme, changeTheme } = useTheme()
+  
   const navigate = useNavigate()
 
   return (
@@ -50,6 +52,7 @@ function App({ isPlaying, toggleMusic }) {
       <button className="start-btn regular-font" onClick={() => navigate("/lockin")}>
         Lock In
       </button>
+      
     </div>
   )
 }

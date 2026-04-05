@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export function useTheme() {
   const [theme, setTheme] = useState(
     document.body.getAttribute("data-theme") || "winter"
   )
+  const snowKeyRef = useRef(0)  // increments each time winter is activated
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -19,10 +20,11 @@ export function useTheme() {
   const changeTheme = (newTheme) => {
     if (newTheme === "winter") {
       document.body.removeAttribute("data-theme")
+      snowKeyRef.current += 1   // force Snowfall remount
     } else {
       document.body.setAttribute("data-theme", newTheme)
     }
   }
 
-  return { theme, changeTheme }
+  return { theme, changeTheme, snowKey: snowKeyRef.current }
 }

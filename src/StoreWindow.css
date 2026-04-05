@@ -91,6 +91,7 @@
   letter-spacing: 0.02em;
 }
 .store-item-desc {
+  font-family: "Roboto Mono", monospace;
   font-size: 0.7rem;
   opacity: 0.45;
   line-height: 1.3;
@@ -148,4 +149,17 @@
   width: 40px;
   height: 40px;
   object-fit: contain;
+}
+
+.store-food-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+.store-food-qty {
+  font-size: 0.68rem;
+  opacity: 0.5;
+  font-family: "Unica One", sans-serif;
 }

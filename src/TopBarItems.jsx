@@ -20,7 +20,7 @@ export function ThemeMenu({ changeTheme, ownedThemes = [] }) {
       {showThemes && (
         <>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: "10px" }} />
-          <div className="theme-menu regular-font" style={{ top: "calc(100% + 10px)" }}>
+          <div className="theme-menu regular" style={{ top: "calc(100% + 10px)" }}>
             {available.map(t => (
               <div
                 key={t.id}

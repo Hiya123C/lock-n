@@ -54,7 +54,7 @@ export default function ChecklistWindow({ tasks, addTask, toggleTask, deleteTask
                   {task.done ? "check_circle" : "radio_button_unchecked"}
                 </span>
               </button>
-              <span className="cl-text">{task.text}</span>
+              <span className="cl-text regular-font">{task.text}</span>
               <button className="cl-delete" onClick={() => deleteTask(task.id)}>
                 <span className="material-symbols-outlined">close</span>
               </button>

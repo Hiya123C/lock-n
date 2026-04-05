@@ -51,8 +51,9 @@ function QuadrantPanel({ qKey, tasks, addTask, toggleTask, deleteTask, updateDea
                     {task.done ? "check_circle" : "radio_button_unchecked"}
                   </span>
                 </button>
+                
                 <div className="pm-task-content">
-                  <span className="pm-task-text">{task.text}</span>
+                  <span className="pm-task-text regular-font">{task.text}</span>
                   {/* Inline deadline picker */}
                   <DatePicker
                     value={task.deadline || ""}
