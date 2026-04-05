@@ -1,8 +1,8 @@
 // useFaceDetection.js
 // ─────────────────────────────────────────────
 // ✏️  CHANGE THRESHOLDS HERE:
-const ABSENT_WARNING_MS = 1 * 60 * 1000   // 1 min  (production: 5 * 60 * 1000)
-const ABSENT_PENALTY_MS = 2 * 60 * 1000   // 2 min  (production: 10 * 60 * 1000)
+const ABSENT_WARNING_MS = 5 * 60 * 1000   // 1 min  (production: 5 * 60 * 1000)
+const ABSENT_PENALTY_MS = 10 * 60 * 1000   // 2 min  (production: 10 * 60 * 1000)
 const DETECTION_INTERVAL_MS = 3000        // check every 3 seconds
 // ─────────────────────────────────────────────
 //
