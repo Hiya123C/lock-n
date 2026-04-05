@@ -117,15 +117,14 @@ export default function DecoLayer({ storeState }) {
                   onClick={(e) => {
                     e.stopPropagation()
                     setFoodPickerFor(prev => prev === item.id ? null : item.id)
-                    setAnimPickerFor(null) // close anim picker if open
+                    setAnimPickerFor(null)
                   }}
                 >
                   🍖
                 </button>
               )}
 
-              {/* Animation picker — only for items that have animation options */}
-              {item.animations?.length > 0 && (
+              {/* {item.animations?.length > 0 && (
                 <button
                   className="deco-ctrl-btn"
                   title="animation"
@@ -136,7 +135,7 @@ export default function DecoLayer({ storeState }) {
                 >
                   ✨
                 </button>
-              )}
+              )} */}
 
               {/* Remove button */}
               <button
@@ -151,7 +150,7 @@ export default function DecoLayer({ storeState }) {
             {/* Food picker dropdown */}
             {foodPickerFor === item.id && (
               <div className="deco-food-picker" onClick={e => e.stopPropagation()}>
-                <p className="deco-food-title">feed {getPetName(item.id) || item.name}</p>
+                <p className="deco-food-title regular-font">feed {getPetName(item.id) || item.name}</p>
                 {PET_FOOD.map(food => {
                   const qty = getFoodQuantity(food.id)
                   return (
@@ -164,8 +163,8 @@ export default function DecoLayer({ storeState }) {
                       disabled={qty === 0}
                     >
                       <span className="deco-food-icon">{food.icon}</span>
-                      <span className="deco-food-name">{food.name}</span>
-                      <span className="deco-food-qty">×{qty}</span>
+                      <span className="regular-font deco-food-name">{food.name}</span>
+                      <span className="regular-font deco-food-qty">×{qty}</span>
                     </button>
                   )
                 })}

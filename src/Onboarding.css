@@ -96,7 +96,7 @@
   text-align: center;
   margin: 0;
   line-height: 1.5;
-  max-width: 320px;
+  max-width: 350px;
 }
 .ob-tip {
   background: var(--bg-color, #d9eafd);
