@@ -169,7 +169,7 @@ export default function DecoLayer({ storeState }) {
                   )
                 })}
                 {PET_FOOD.every(f => getFoodQuantity(f.id) === 0) && (
-                  <p className="deco-food-none">no food! buy some in the store 🛒</p>
+                  <p className="deco-food-none regular-font">no food! buy some in the store</p>
                 )}
               </div>
             )}

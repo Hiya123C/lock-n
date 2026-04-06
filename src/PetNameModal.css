@@ -39,6 +39,7 @@
 .pnm-buttons { display: flex; gap: 10px; margin-top: 4px; }
 .pnm-skip {
   all: unset; cursor: pointer; font-size: 0.85rem;
+  font-family: "Unica One", sans-serif;
   opacity: 0.4; padding: 10px 16px; border-radius: 10px; transition: opacity 0.2s;
 }
 .pnm-skip:hover { opacity: 0.7; }
@@ -47,6 +48,7 @@
   background: var(--dark); color: white;
   padding: 10px 22px; border-radius: 12px;
   font-size: 0.9rem; font-weight: 600;
+  font-family: "Unica One", sans-serif;
   transition: transform 0.15s, opacity 0.15s;
 }
 .pnm-confirm:hover:not(:disabled) { transform: scale(1.04); opacity: 0.88; }

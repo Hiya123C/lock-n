@@ -45,8 +45,7 @@ export function useCoins() {
 
   const spendCoins = (amount) => {
     setCoins(prev => {
-      if (prev < amount) return prev // can't afford
-      const next = prev - amount
+      const next = Math.max(0, prev - amount)  // floor at 0, never block the deduction
       localStorage.setItem(COIN_KEY, next)
       return next
     })

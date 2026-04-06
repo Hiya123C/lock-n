@@ -14,7 +14,7 @@ export default function PetNameModal({ pet, onConfirm, onSkip }) {
     <div className="pnm-overlay">
       <div className="pnm-box">
         <span className="pnm-icon">{pet.icon}</span>
-        <h2 className="pnm-title">name your {pet.name.toLowerCase()}!</h2>
+        <h2 className="pnm-title bold-font">name your {pet.name.toLowerCase()}!</h2>
         <input
           className="pnm-input regular-font"
           placeholder={`e.g. "Mochi"`}
@@ -25,9 +25,9 @@ export default function PetNameModal({ pet, onConfirm, onSkip }) {
           maxLength={20}
         />
         <div className="pnm-buttons">
-          <button className="pnm-skip"    onClick={onSkip}>skip</button>
+          <button className="pnm-skip regular" onClick={onSkip}>skip</button>
           <button
-            className="pnm-confirm"
+            className="pnm-confirm regular"
             onClick={() => name.trim() && onConfirm(name.trim())}
             disabled={!name.trim()}
           >

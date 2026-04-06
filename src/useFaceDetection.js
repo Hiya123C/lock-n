@@ -1,8 +1,8 @@
 // useFaceDetection.js
 // ─────────────────────────────────────────────
 // ✏️  CHANGE THRESHOLDS HERE:
-const ABSENT_WARNING_MS = 5 * 60 * 1000   // 1 min  (production: 5 * 60 * 1000)
-const ABSENT_PENALTY_MS = 10 * 60 * 1000   // 2 min  (production: 10 * 60 * 1000)
+const ABSENT_WARNING_MS = 0.25 * 60 * 1000   // 1 min  (production: 5 * 60 * 1000)
+const ABSENT_PENALTY_MS = 0.5 * 60 * 1000   // 2 min  (production: 10 * 60 * 1000)
 const DETECTION_INTERVAL_MS = 3000        // check every 3 seconds
 // ─────────────────────────────────────────────
 //
@@ -62,8 +62,13 @@ export function useFaceDetection({ enabled, onWarning, onPenalty, onStatusChange
     penaltyFiredRef.current = false
   }
 
-  // ── Load models once ──────────────────────────────────
+  //load model
   useEffect(() => {
+    if (!faceapi) {
+      // face-api not installed — skip detection entirely, never penalise
+      setStatus("idle")
+      return
+    }
     if (modelsLoadedRef.current) return
     setStatus("loading")
     faceapi.nets.tinyFaceDetector.loadFromUri("/models")
@@ -107,6 +112,7 @@ export function useFaceDetection({ enabled, onWarning, onPenalty, onStatusChange
     if (!modelsLoaded) return
 
     intervalRef.current = setInterval(async () => {
+      if (!faceapi) return
       const video = videoRef.current
       if (!video || video.readyState < 2) return
 

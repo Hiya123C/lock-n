@@ -13,8 +13,8 @@ export default function AbsenceWarning({ mode, onDismiss, onAcceptPenalty }) {
       <div className="aw-overlay aw-warning-overlay">
         <div className="aw-box">
           <span className="aw-emoji">👀</span>
-          <h2 className="aw-title">where'd you go?</h2>
-          <p className="aw-msg">
+          <h2 className="aw-title bold-font">where'd you go?</h2>
+          <p className="aw-msg regular-font">
             you've been away for <strong>5 minutes</strong>.<br />
             come back before the 10 minute mark or your session will be cancelled.
           </p>
@@ -29,8 +29,8 @@ export default function AbsenceWarning({ mode, onDismiss, onAcceptPenalty }) {
       <div className="aw-overlay aw-penalty-overlay">
         <div className="aw-box">
           <span className="aw-emoji">😔</span>
-          <h2 className="aw-title">session cancelled</h2>
-          <p className="aw-msg">
+          <h2 className="aw-title bold-font">session cancelled</h2>
+          <p className="aw-msg regular-font">
             you were away for <strong>10+ minutes</strong>.<br />
             your session has been ended and <strong>-100 coins</strong> have been deducted.
           </p>
