@@ -28,28 +28,12 @@ export const THEMES = [
 export const DECO = [
   {
     id: "deco_plant", name: "Tree", price: 150,
-    // ── To use your own image: change icon to "/deco/plant.png" ──
-    icon: "/deco/tree.svg",
+    icon: "/tree.svg",
     description: "lush greenery",
-    animations: [], // no animation options for static deco
+    animations: [],
   },
-  // {
-  //   id: "deco_lamp", name: "Warm Lamp", price: 150,
-  //   icon: "💡",
-  //   description: "cosy ambient glow",
-  //   animations: [],
-  // },
-  // {
-  //   id: "deco_candle", name: "Candle", price: 100,
-  //   icon: "🕯️",
-  //   description: "flickering focus vibes",
-  //   animations: [
-  //     { id: "flicker", label: "Flicker", cssClass: "anim-flicker" },
-  //   ],
-  // },
   {
     id: "deco_cloud", name: "Cloud", price: 200,
-    // ── To use your own cloud drawing: icon: "/deco/cloud.png" ──
     icon: "☁️",
     description: "dreamy overhead cloud",
     animations: [
@@ -62,13 +46,12 @@ export const DECO = [
 export const PETS = [
   {
     id: "pet_cat", name: "Cat", price: 500,
-    // ── To use your own cat drawing: icon: "/pets/cat.png" ──
     icon: "🐱",
     description: "judges your productivity",
     animations: [
-      { id: "idle",  label: "Idle",     cssClass: "" },
-      { id: "walk",  label: "Walking",  cssClass: "anim-walk" },
-      { id: "sleep", label: "Sleeping", cssClass: "anim-sleep" },
+      // { id: "idle",  label: "Idle",     cssClass: "" },
+      // { id: "walk",  label: "Walking",  cssClass: "anim-walk" },
+      // { id: "sleep", label: "Sleeping", cssClass: "anim-sleep" },
     ],
   },
   // more to come:
